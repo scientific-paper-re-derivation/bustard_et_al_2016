@@ -1,0 +1,296 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9023,        287]
+NotebookOptionsPosition[      7955,        252]
+NotebookOutlinePosition[      8302,        267]
+CellTagsIndexPosition[      8259,        264]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Governing equations", "Text",
+ CellChangeTimes->{{3.6689969722982225`*^9, 3.668996977052435*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]1", "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox["r", "2"]], 
+     RowBox[{"Dt", "[", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["r", "2"], "\[Rho]", " ", "u"}], ",", "r"}], "]"}]}], 
+    "\[Equal]", "q"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997061211607*^9, 3.66899707894022*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]2", "=", 
+   RowBox[{
+    RowBox[{"\[Rho]", " ", "u", " ", 
+     RowBox[{"Dt", "[", 
+      RowBox[{"u", ",", "r"}], "]"}]}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "q"}], " ", "u"}], " ", "-", " ", 
+     RowBox[{"Dt", "[", 
+      RowBox[{"P", ",", "r"}], "]"}], "-", 
+     RowBox[{"\[Rho]", " ", 
+      RowBox[{"Dt", "[", 
+       RowBox[{"\[CapitalPhi]", ",", "r"}], "]"}]}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997080905374*^9, 3.6689971047217445`*^9}}],
+
+Cell["\<\
+why is there a gravitational term in the momentum equation but not in the \
+energy equation?\
+\>", "Text",
+ CellChangeTimes->{{3.6689994666582437`*^9, 3.668999511211861*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]3", "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox["r", "2"]], 
+     RowBox[{"Dt", "[", 
+      RowBox[{
+       RowBox[{"\[Rho]", " ", "u", " ", 
+        SuperscriptBox["r", "2"], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           FractionBox["1", "2"], 
+           SuperscriptBox["u", "2"]}], "+", 
+          RowBox[{
+           FractionBox["\[Gamma]", 
+            RowBox[{"\[Gamma]", "-", "1"}]], "*", 
+           FractionBox["P", "\[Rho]"]}]}], ")"}]}], ",", "r"}], "]"}]}], 
+    "\[Equal]", "Qcc"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997106385603*^9, 3.668997134087904*^9}}],
+
+Cell["Mass source term", "Text",
+ CellChangeTimes->{{3.6689971375700483`*^9, 3.668997142204033*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]4", "=", 
+   RowBox[{"q0", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       SuperscriptBox["r", "2"], 
+       SuperscriptBox["R", "2"]]}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997144777207*^9, 3.6689971559138308`*^9}}],
+
+Cell["Temperature evolution", "Text",
+ CellChangeTimes->{{3.6689972175775127`*^9, 3.6689972234509563`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]5", "=", 
+   RowBox[{
+    RowBox[{"u", " ", 
+     FractionBox["kb", "m"], 
+     RowBox[{"Dt", "[", 
+      RowBox[{"T", ",", "r"}], "]"}]}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"\[Gamma]", "-", "1"}], ")"}], "Qdot"}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"\[Gamma]", "-", "1"}], ")"}], 
+      FractionBox[
+       RowBox[{"kb", " ", "T", " ", "u"}], 
+       RowBox[{"m", " ", "\[Rho]"}]], 
+      RowBox[{"Dt", "[", 
+       RowBox[{"\[Rho]", ",", "r"}], "]"}]}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6689972262219095`*^9, 3.6689972680090423`*^9}, {
+  3.668997314945902*^9, 3.6689973192794743`*^9}, {3.668997364186718*^9, 
+  3.6689973666304517`*^9}, {3.6689974129489746`*^9, 3.6689974138651156`*^9}}],
+
+Cell["Pressure equation", "Text",
+ CellChangeTimes->{{3.668997288072463*^9, 3.6689972903626814`*^9}, {
+  3.6689973747562566`*^9, 3.66899737936294*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]6", "=", 
+   RowBox[{
+    RowBox[{"Dt", "[", 
+     RowBox[{"P", ",", "r"}], "]"}], "\[Equal]", 
+    RowBox[{
+     RowBox[{
+      SuperscriptBox["cs", "2"], 
+      RowBox[{"Dt", "[", 
+       RowBox[{"\[Rho]", ",", "r"}], "]"}]}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"\[Gamma]", "-", "1"}], "u"], "Qdot"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6689973806203036`*^9, 3.6689974177930317`*^9}}],
+
+Cell["If the heat source is proportional to the mass source", "Text",
+ CellChangeTimes->{{3.668997460899349*^9, 3.6689974769166126`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]7", "=", 
+   RowBox[{
+    RowBox[{"\[Rho]", " ", "Qdot"}], "\[Equal]", 
+    RowBox[{"\[Eta]", " ", "q"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997478894108*^9, 3.6689974877507286`*^9}}],
+
+Cell["\<\
+Equation 8 (and the appendix) are wrong (the integration should start from \
+the stagnation point, not from r == 0) but I will go along with it\
+\>", "Text",
+ CellChangeTimes->{{3.668997759730836*^9, 3.668997817780409*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]8", "=", 
+   RowBox[{"\[Rho]", "\[Equal]", 
+    FractionBox[
+     RowBox[{"r", " ", "qbrac"}], 
+     RowBox[{"3", "u"}]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.668997819656588*^9, 3.668997829420246*^9}}],
+
+Cell["\<\
+Constant density below a certain radius? (of stars, not gas?)\
+\>", "Text",
+ CellChangeTimes->{{3.6689978825948143`*^9, 3.668997892908549*^9}, {
+  3.6689979398582835`*^9, 3.668997945527915*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]9", "=", 
+   RowBox[{"\[Rho]m", "\[Equal]", 
+    FractionBox[
+     RowBox[{"3", "M"}], 
+     RowBox[{"4", "\[Pi]", " ", 
+      SuperscriptBox["Rm", "3"]}]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.66899789532104*^9, 3.668997907347682*^9}}],
+
+Cell["Gravitational potential", "Text",
+ CellChangeTimes->{{3.668997919390294*^9, 3.6689979496327724`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{"G", 
+     FractionBox[
+      RowBox[{"4", "\[Pi]"}], "3"], "\[Rho]m", " ", 
+     SuperscriptBox["r", "3"]}], "r"], "+", "C1"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", " ", "/.", " ", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{"eqn\[LetterSpace]9", ",", "\[Rho]m"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"%", "/.", 
+   RowBox[{
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"%", "/.", 
+         RowBox[{"r", "\[Rule]", "Rm"}]}], ")"}], "==", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"G", " ", "M"}], "Rm"]}]}], ",", "C1"}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Simplify", "[", "%", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]10", "=", "%"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6689979592999163`*^9, 3.6689980828166*^9}, {
+  3.668998142868559*^9, 3.6689981509224653`*^9}}],
+
+Cell["This is different from the results they get in the paper", "Text",
+ CellChangeTimes->{{3.6689981522276044`*^9, 3.6689981652674217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]10\[LetterSpace]orig", "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"G", " ", "M"}], 
+     RowBox[{"2", " ", "Rm"}]], 
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox[
+       SuperscriptBox["r", "2"], 
+       SuperscriptBox["Rm", "2"]], "-", "3"}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6689981716441174`*^9, 3.668998192323566*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eqn\[LetterSpace]11", "=", 
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"G", " ", "M"}], "r"]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6689981956604085`*^9, 3.6689982071584635`*^9}}],
+
+Cell["I do not understand the method described in section 3.3", "Text",
+ CellChangeTimes->{{3.6690002824464417`*^9, 3.669000311184315*^9}}]
+},
+WindowSize->{757, 545},
+WindowMargins->{{Automatic, 153}, {Automatic, 18}},
+FrontEndVersion->"10.3 for Microsoft Windows (64-bit) (December 10, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 103, 1, 30, "Text"],
+Cell[664, 23, 384, 12, 47, "Input"],
+Cell[1051, 37, 538, 15, 31, "Input"],
+Cell[1592, 54, 184, 4, 30, "Text"],
+Cell[1779, 60, 688, 21, 48, "Input"],
+Cell[2470, 83, 100, 1, 30, "Text"],
+Cell[2573, 86, 306, 9, 53, "Input"],
+Cell[2882, 97, 107, 1, 30, "Text"],
+Cell[2992, 100, 813, 22, 48, "Input"],
+Cell[3808, 124, 151, 2, 30, "Text"],
+Cell[3962, 128, 467, 14, 46, "Input"],
+Cell[4432, 144, 137, 1, 30, "Text"],
+Cell[4572, 147, 246, 6, 31, "Input"],
+Cell[4821, 155, 233, 4, 49, "Text"],
+Cell[5057, 161, 260, 7, 47, "Input"],
+Cell[5320, 170, 204, 4, 30, "Text"],
+Cell[5527, 176, 294, 8, 48, "Input"],
+Cell[5824, 186, 107, 1, 30, "Text"],
+Cell[5934, 189, 1100, 33, 153, "Input"],
+Cell[7037, 224, 142, 1, 30, "Text"],
+Cell[7182, 227, 401, 12, 53, "Input"],
+Cell[7586, 241, 223, 6, 46, "Input"],
+Cell[7812, 249, 139, 1, 30, "Text"]
+}
+]
+*)
+
+(* End of internal cache information *)
